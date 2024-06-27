@@ -1,5 +1,6 @@
 import React from "react";
 import imagemFundo from '@/src/images/car-bg.jpg'
+import logocar from "@/src/images/logo-car.png"
 import Image from "next/image";
 
 const HomePage = () => {
@@ -16,17 +17,21 @@ const HomePage = () => {
 
       <section className="relative bg-blueGray-50">
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
-          <Image src={imagemFundo} layout="fill" objectFit="cover" alt="" />
+          <div className="absolute top-0 w-full h-full bg-center bg-cover">
+            <Image src={imagemFundo} layout="fill" objectFit="cover" alt="" />
+            <span
+              id="blackOverlay"
+              className="w-full h-full absolute opacity-75 bg-black"
+            ></span>
+          </div>
+
           {/* <div
             className="absolute top-0 w-full h-full bg-center bg-cover"
             style={{
               backgroundImage: `url(${imagemFundo})`
             }}
           >
-            <span
-              id="blackOverlay"
-              className="w-full h-full absolute opacity-75 bg-black"
-            ></span>
+            
           </div> */}
           <div className="container relative mx-auto">
             <div className="items-center flex flex-wrap">
@@ -42,8 +47,9 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+
           <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px">
-            <svg
+            {/* <svg
               className="absolute bottom-0 overflow-hidden"
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="none"
@@ -56,13 +62,13 @@ const HomePage = () => {
                 className="text-blueGray-200 fill-current"
                 points="2560 0 2560 100 0 100"
               ></polygon>
-            </svg>
+            </svg> */}
           </div>
         </div>
         <section className="pb-10 bg-blueGray-200 -mt-24">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap">
-              <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+            <div className="bg-red-600 flex justify-center items-center">
+              {/* <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
@@ -75,8 +81,9 @@ const HomePage = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className="w-full md:w-4/12 px-4 text-center">
+              </div> */}
+
+              {/* <div className="w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
@@ -89,12 +96,22 @@ const HomePage = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+              </div> */}
+
+              <div className="pt-6 w-full md:w-8/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                      <i className="fas fa-fingerprint"></i>
+                    <div className="text-white p-0 text-center inline-flex items-center justify-center w-12 h-12  shadow-lg rounded-full bg-emerald-400">
+                      <Image
+                        src={logocar}
+                        // layout="fill"
+                        width={200}
+                        height={200}
+                        className="rounded-full"
+                        objectFit="cover"
+                        alt=""
+                      />
+                      {/* <i className="fas fa-fingerprint"></i> */}
                     </div>
                     <h6 className="text-xl font-semibold">Verified Company</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
@@ -106,7 +123,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <footer className="relative pt-8 pb-6 mt-1">
+          {/* <footer className="relative pt-8 pb-6 mt-1">
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap items-center md:justify-between justify-center">
                 <div className="w-full md:w-6/12 px-4 mx-auto text-center">
@@ -134,7 +151,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-          </footer>
+          </footer> */}
         </section>
       </section>
     </>
